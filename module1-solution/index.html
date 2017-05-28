@@ -6,6 +6,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="app.js"></script>
     <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/site.css">
     <style>
       .message { font-size: 1.3em; font-weight: bold; }
     </style>
@@ -18,9 +19,12 @@
              <input id="lunch-menu" type="text"
              placeholder="list comma separated dishes you usually have for lunch"
              ng-model="listOfLunch"
+             ng-class="inputBoxSytle.borderClass"
              class="form-control">
+             <span>Empty string inside the list is not considered as a valid item.
+             </span>
          </div>
-         <div class="form-group">
+         <div class="form-group" ng-class="messageStyle.colorClass">
            {{message}}
          </div>
          <div class="form-group">
