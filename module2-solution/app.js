@@ -52,7 +52,7 @@
             {
                 name: 'Bread',
                 quantity: 2,
-                bought: true
+                bought: false
             },
             {
                 name: 'Honey',
