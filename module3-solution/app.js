@@ -1,3 +1,7 @@
+// Todo:
+// Using Grid, see UI grid for AngularJS: http://ui-grid.info/docs/#/tutorial/101_intro
+// Using Cache, see: https://stackoverflow.com/questions/14117653/how-to-cache-an-http-get-service-in-angularjs
+// Both seems simple enough
 (function () {
 'use strict';
 
