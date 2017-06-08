@@ -9,7 +9,7 @@
     <script src="app.js"></script>
   </head>
 <body>
-   <div class="container" ng-controller="NarrowItDownController as nidCtr">
+   <div class="container" ng-controller="NarrowItDownController as list">
     <h1>Narrow Down Your Chinese Menu Choice</h1>
 
     <div class="form-group">
@@ -20,7 +20,9 @@
     </div>
 
     <!-- found-items should be implemented as a component -->
-    <found-items found-items="...." on-remove="...."></found-items>
+    <div>
+    <found-items items="list.found" on-remove="list.removeItem(index)"></found-items>
+    </div>
   </div>
 
 </body>
