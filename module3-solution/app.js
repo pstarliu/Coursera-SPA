@@ -26,14 +26,20 @@
         return ddo;
     }
 
-    NarrowItDownController.$inject = ['MenuSearchService'];
-    function NarrowItDownController(MenuSearchService) {
+    NarrowItDownController.$inject = ['MenuSearchService', '$scope'];
+    function NarrowItDownController(MenuSearchService, $scope) {
         var narrowItDown = this;
-        MenuSearchService.getMatchedMenuItems()
-        .then(function (result) {
-            narrowItDown.found = result;
-        });
-          
+        $scope.searchTerm = '';
+
+        narrowItDown.search = function () {
+            MenuSearchService.getMatchedMenuItems($scope.searchTerm)
+                .then(function (result) {
+                    narrowItDown.found = result;
+                }).catch(function (error) {
+                    console.log('NarrowItDownController promise went wrong.');
+                });
+        }
+
         // var promise = MenuSearchService.getMatchedMenuItems();
 
         // promise.then(function (result) {
@@ -45,7 +51,6 @@
         //     console.log('http service request went wrong.', error);
         // });
 
-        
         narrowItDown.removeItem = function (itemIndex) {
             console.log('going to remove: ' + narrowItDown.found[itemIndex]);
         }
@@ -61,19 +66,22 @@
             //     method: "GET",
             //     url: (ApiBasePath + '/menu_items.json')
             // });
-            return $http({
-                method: "GET",
-                url: (ApiBasePath + '/menu_items.json')
-            })
-                .then(function (result) {
-                    // process result and only keep items that match
-                    var foundItems = result.data.menu_items;
-                    console.log("inside service, foundItems: ", foundItems);
-                    return foundItems;
+            if (searchTerm.trim().length > 0) {
+                return $http({
+                    method: "GET",
+                    url: (ApiBasePath + '/menu_items.json')
                 })
-                .catch(function (error) {
-                    console.log('http service request went wrong');
-                });
+                    .then(function (result) {
+                        // process result and only keep items that match
+                        var foundItems = result.data.menu_items
+                            .filter(i => i.description.toLowerCase().indexOf(searchTerm) > -1);
+
+                        return foundItems;
+                    })
+                    .catch(function (error) {
+                        console.log('http service request went wrong');
+                    });
+            }
         }
     }
 })();
