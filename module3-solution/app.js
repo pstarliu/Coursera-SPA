@@ -39,19 +39,8 @@
                     }).catch(function (error) {
                         console.log('NarrowItDownController promise went wrong.');
                     });
-            }   
+            }
         }
-
-        // var promise = MenuSearchService.getMatchedMenuItems();
-
-        // promise.then(function (result) {
-        //     narrowItDown.found = result.data.menu_items;
-        //     console.log("found: " + narrowItDown.found.length);
-        //     console.log("found[0]: " + narrowItDown.found[0]);
-        // })
-        // .catch(function(error) {
-        //     console.log('http service request went wrong.', error);
-        // });
 
         narrowItDown.removeItem = function (itemIndex) {
             console.log('going to remove: ' + narrowItDown.found[itemIndex]);
@@ -65,10 +54,6 @@
         var service = this;
 
         service.getMatchedMenuItems = function (searchTerm) {
-            // return $http({
-            //     method: "GET",
-            //     url: (ApiBasePath + '/menu_items.json')
-            // });
             return $http({
                 method: "GET",
                 url: (ApiBasePath + '/menu_items.json')
