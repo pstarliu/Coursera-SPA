@@ -61,7 +61,7 @@
                 .then(function (result) {
                     // process result and only keep items that match
                     var foundItems = result.data.menu_items
-                        .filter(i => i.description.toLowerCase().indexOf(searchTerm) > -1);
+                        .filter(i => i.description.toLowerCase().indexOf(searchTerm.toLowerCase()) > -1);
 
                     return foundItems;
                 })
