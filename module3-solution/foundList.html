@@ -1,6 +1,29 @@
-<ol>
-  <li ng-repeat="item in list.items">
-    {{ item.name }}, {{item.short_name}}, {{ item.description }}
-    <button ng-click="list.onRemove({index: $index});">Don't want this one!</button>
-  </li>
-</ol>
+<div class="table-responsive">
+<table class="table table-condensed table-striped">
+  <thead>
+      <tr>
+        <th>Name</th>
+        <th>Shortname</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+  <tbody>
+  <tr ng-repeat="item in list.items">
+    <td>{{ item.name }}
+    </td>
+    <td>
+      {{item.short_name}}
+    </td>
+    <td>
+      {{ item.description }}
+    </td>
+    <td>
+      <button ng-click="list.onRemove({index: $index});">Don't want this one!</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</div>
+<!--<div ng-controller="NarrowItDownController">
+  <div ui-grid="{ data: foundItems }" class="grid"></div>
+</div>-->

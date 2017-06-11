@@ -30,7 +30,6 @@
     function NarrowItDownController(MenuSearchService, $scope) {
         var narrowItDown = this;
         $scope.searchTerm = '';
-
         narrowItDown.search = function () {
             if ($scope.searchTerm.length > 0) {
                 MenuSearchService.getMatchedMenuItems($scope.searchTerm)
@@ -43,7 +42,6 @@
         }
 
         narrowItDown.removeItem = function (itemIndex) {
-            console.log('going to remove: ' + narrowItDown.found[itemIndex]);
             narrowItDown.found.splice(itemIndex, 1);
         }
 
