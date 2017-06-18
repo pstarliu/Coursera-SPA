@@ -1,3 +1,8 @@
-<div>Item name: {{ item.name }}</div>
-<div>Item quantity: {{ item.qtty }}</div>
-<div>Item description: {{ item.desc }}</div>
+<ul>
+<li ng-repeat="item in $ctrl.items" ui-sref="items({itemId: $index})">
+    <div>Item name: {{ item.name }}</div>
+    <div>Item description: {{ item.description }}</div>
+    <!--<div>Item price small quantity: {{ item.priceSmall }}</div>
+    <div>Item price large quantity: {{ item.priceLarge }}</div>-->
+</li>
+</ul>

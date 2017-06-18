@@ -25,10 +25,10 @@
               }
           })
 
-          .state('menu.item', {
-              url: '/item/{itemID}',
-              templateUrl: 'templates/item.html',
-              controller: 'ItemController as item'
+          .state('items', {
+              url: '/items/{itemID}',
+              templateUrl: 'templates/main-items.html',
+              controller: 'ItemController as itemCtrl'
           });
       ;
   }
