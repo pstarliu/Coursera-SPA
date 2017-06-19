@@ -1,40 +1,42 @@
 <!DOCTYPE html>
 <html ng-app='MenuApp'>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <!-- Latest compiled and minified bootstrap CSS -->
     <!--do I need it?-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
-            <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
 
-        <!-- Libraries -->
-    <!--<script src="lib/angular.min.js"></script>
-    <script src="lib/angular-ui-router.min.js"></script>-->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.js"></script>
-    
-    <!-- Modules -->
-    <script src="src/menuapp.module.js"></script>
-
-    <script src="src/routes.js"></script>    
-
-    <script src="src/categories.component.js"></script>
-    <script src="src/categories.controller.js"></script>
-    <script src="src/data.module.js"></script>
-    <script src="src/menudata.service.js"></script>
-    <script src="src/item.controller.js"></script>
-    <script src="src/items.component.js"></script>
-    
     <title>Assignment 4</title>
-  </head>
+</head>
+
 <body>
     <div class="container">
-        
+
         <ui-view></ui-view>
+
+        <!-- Libraries -->
+        <!--<script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>-->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.js"></script>
+
+        <!-- Modules -->
+        <script src="src/menuapp.module.js"></script>
+
+        <script src="src/routes.js"></script>
+
+        <script src="src/categories.component.js"></script>
+        <script src="src/categories.controller.js"></script>
+        <script src="src/data.module.js"></script>
+        <script src="src/menudata.service.js"></script>
+        <script src="src/item.controller.js"></script>
+        <script src="src/items.component.js"></script>
 
     </div>
 </body>
+
 </html>

@@ -17,10 +17,11 @@
    ItemController.$inject = ['$stateParams', 'items'];
   function ItemController($stateParams, items) {
     var item = this;
-    var itemParam = items[$stateParams.itemID];
+    item.items = items.data.menu_items;
+    // var itemParam = items[$stateParams.categoryName];
 
-    item.name = itemParam.name;
-    item.description =  itemParam.description;
+    // item.name = itemParam.name;
+    // item.description =  itemParam.description;
   }
 
 })();
