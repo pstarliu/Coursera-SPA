@@ -3,7 +3,7 @@
     <form name="signForm" novalidate>
 
         <input type="text" name="firstName" placeholder="first name" ng-model="signCtrl.firstName" 
-        required minlength="3" ng-maxlength="15">        {{ signCtrl.firstName }}
+        required minlength="3" ng-maxlength="15" class="user-entry">        {{ signCtrl.firstName }}
         <span ng-if="(signForm.firstName.$error.minlength || signForm.firstName.$error.required) && signForm.firstName.$touched">
             First name must be at least 3 characters long
           </span>
@@ -13,7 +13,7 @@
         <br>
 
         <input type="text" name="LastName" placeholder="last name" ng-model="signCtrl.lastName" 
-        required minlength="2" ng-maxlength="15">        {{ signCtrl.lastName }}
+        required minlength="2" ng-maxlength="15" class="user-entry">        {{ signCtrl.lastName }}
         <span ng-if="(signForm.lastName.$error.minlength || signForm.lastName.$error.required) && signForm.lastName.$touched">
             Last name must be at least 2 characters long
           </span>
@@ -22,19 +22,22 @@
           </span>
         <br>
 
-        <input type="email" name="email" placeholder="Email" ng-model="reg.user.email" required>
+        <input type="email" name="email" placeholder="Email" ng-model="reg.user.email" required 
+        class="user-entry">
         <span ng-if="regForm.email.$invalid && regForm.email.$touched">
             Must be a valid email address: handle@domain format
           </span>
         <br>
 
-        <input type="text" name="phone" placeholder="Phone ###-###-####" ng-model="reg.user.phone" pattern="(\d{3})-(\d{3})-(\d{4})">
+        <input type="text" name="phone" placeholder="Phone ###-###-####" ng-model="reg.user.phone" 
+        pattern="(\d{3})-(\d{3})-(\d{4})" class="user-entry">
         <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
             Phone must be in the format ###-###-####.
           </span>
         <br>
 
-        <button ng-disabled="signForm.$invalid" ng-click="signCtrl.submit()">
+        <!--<button ng-disabled="signForm.$invalid" ng-click="signCtrl.submit()">-->
+            <button ng-click="signCtrl.submit()" class="button">
     Submit</button>
     </form>
 </fieldset>
