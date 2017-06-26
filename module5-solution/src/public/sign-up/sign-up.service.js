@@ -24,11 +24,18 @@
             return userPreferences;
         }
 
-        service.getFavouriteItem = function () {
-            if (userPreferences.completed) {
-                return $http.get(ApiPath + '/menu_items/' + userPreferences.favouriteDish + '.json')
+        service.getFavouriteItem = function (completed, favouriteDish) {
+            if (completed) {
+                return $http.get(ApiPath + '/menu_items/' + favouriteDish + '.json')
                     .then(function (response) { return response.data; })
             }
         };
+
+        // service.getFavouriteItem = function () {
+        //     if (true) {
+        //         return $http.get(ApiPath + '/menu_items/' + userPreferences.favouriteDish + '.json')
+        //             .then(function (response) { return response.data; })
+        //     }
+        // };
     }
 })();

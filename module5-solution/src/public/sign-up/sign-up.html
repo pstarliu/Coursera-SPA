@@ -3,7 +3,7 @@
     <form name="signForm" novalidate>
 
         <input type="text" name="firstName" placeholder="first name" ng-model="signCtrl.firstName" 
-        required minlength="3" ng-maxlength="15" class="user-entry">        {{ signCtrl.firstName }}
+        required minlength="3" ng-maxlength="15" class="user-entry"> 
         <span ng-if="(signForm.firstName.$error.minlength || signForm.firstName.$error.required) && signForm.firstName.$touched">
             First name must be at least 3 characters long
           </span>
@@ -13,7 +13,7 @@
         <br>
 
         <input type="text" name="LastName" placeholder="last name" ng-model="signCtrl.lastName" 
-        required minlength="2" ng-maxlength="15" class="user-entry">        {{ signCtrl.lastName }}
+        required minlength="2" ng-maxlength="15" class="user-entry"> 
         <span ng-if="(signForm.lastName.$error.minlength || signForm.lastName.$error.required) && signForm.lastName.$touched">
             Last name must be at least 2 characters long
           </span>
@@ -39,27 +39,18 @@
         <input type="text" name="favouriteDish" placeholder="Favourite Dish (Short Name)" 
         ng-model="signCtrl.favouriteDish" required class="user-entry">
         <span ng-if="signForm.favouriteDish.$invalid && signForm.favouriteDish.$touched">
-            Must be a valid email address: handle@domain format
+            Must present a Favourite Dish.
           </span>
         <br>
 
         <!--<button ng-disabled="signForm.$invalid" ng-click="signCtrl.submit()">-->
             <button ng-click="signCtrl.submit()" class="button">
     Submit</button>
+    <br />
+    <span ng-if="signCtrl.RESTFailed">No such menu number exists</span>
+    <br />
     <span ng-if="signCtrl.completed">
         Your information has been saved
-        <button ng-click="signCtrl.getPreference()">Get saved preference</button>
-        <br />
-        {{signCtrl.firstName}}
-        <br />
-        {{signCtrl.lastName}}
-        <br />
-        {{signCtrl.email}}
-        <br />
-        {{signCtrl.phone}}
-        <br />
-        {{signCtrl.favouriteDish}}
-        <br />
     </span>
     </form>
 </fieldset>

@@ -1,10 +1,12 @@
 <div class="container" ng-if="infoCtrl.myInfo.completed">
-<h2>My Preferences</h2>
-<div>First Name: {{infoCtrl.myInfo.firstName}}</div>
-<div>Last Name: {{infoCtrl.myInfo.lastName}}</div>
-<div>Email: {{infoCtrl.myInfo.email}}</div>
-<div>Phone: {{infoCtrl.myInfo.phone}}</div>
-<menu-item menu-item="infoCtrl.favouriteItem"></menu-item>
+    <div class="col-sm-6">
+        <h2>My Preferences</h2>
+        <div>First Name: {{infoCtrl.myInfo.firstName}}</div>
+        <div>Last Name: {{infoCtrl.myInfo.lastName}}</div>
+        <div>Email: {{infoCtrl.myInfo.email}}</div>
+        <div>Phone: {{infoCtrl.myInfo.phone}}</div>
+    </div>
+    <menu-item menu-item="infoCtrl.favouriteItem"></menu-item>
 </div>
 <div class="container" ng-if="!infoCtrl.myInfo.completed">
     <span>Not Signed Up Yet. <a ui-sref="public.signUp">Sign up Now!</a></span>
