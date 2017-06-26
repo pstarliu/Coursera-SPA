@@ -22,22 +22,44 @@
           </span>
         <br>
 
-        <input type="email" name="email" placeholder="Email" ng-model="reg.user.email" required 
+        <input type="email" name="email" placeholder="Email" ng-model="signCtrl.email" required 
         class="user-entry">
-        <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+        <span ng-if="signForm.email.$invalid && signForm.email.$touched">
             Must be a valid email address: handle@domain format
           </span>
         <br>
 
-        <input type="text" name="phone" placeholder="Phone ###-###-####" ng-model="reg.user.phone" 
+        <input type="text" name="phone" placeholder="Phone ###-###-####" ng-model="signCtrl.phone" 
         pattern="(\d{3})-(\d{3})-(\d{4})" class="user-entry">
-        <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+        <span ng-if="signForm.phone.$invalid && signForm.phone.$touched">
             Phone must be in the format ###-###-####.
+          </span>
+        <br>
+
+        <input type="text" name="favouriteDish" placeholder="Favourite Dish (Short Name)" 
+        ng-model="signCtrl.favouriteDish" required class="user-entry">
+        <span ng-if="signForm.favouriteDish.$invalid && signForm.favouriteDish.$touched">
+            Must be a valid email address: handle@domain format
           </span>
         <br>
 
         <!--<button ng-disabled="signForm.$invalid" ng-click="signCtrl.submit()">-->
             <button ng-click="signCtrl.submit()" class="button">
     Submit</button>
+    <span ng-if="signCtrl.completed">
+        Your information has been saved
+        <button ng-click="signCtrl.getPreference()">Get saved preference</button>
+        <br />
+        {{signCtrl.firstName}}
+        <br />
+        {{signCtrl.lastName}}
+        <br />
+        {{signCtrl.email}}
+        <br />
+        {{signCtrl.phone}}
+        <br />
+        {{signCtrl.favouriteDish}}
+        <br />
+    </span>
     </form>
 </fieldset>
