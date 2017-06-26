@@ -12,11 +12,12 @@ function SignUpController(SignUpService) {
   signCtrl.email = "";
   signCtrl.phone = "";
   signCtrl.favouriteDish = "";
+  signCtrl.completed = false;
 
   signCtrl.submit = function () {
     signCtrl.completed = true;
     SignUpService.savePreference(signCtrl.firstName, signCtrl.lastName, signCtrl.email,
-        signCtrl.phone, signCtrl.favouriteDish);
+        signCtrl.phone, signCtrl.favouriteDish, signCtrl.completed);
   };
 
   signCtrl.getPreference = function () {
@@ -27,6 +28,7 @@ function SignUpController(SignUpService) {
     signCtrl.email = result.email;
     signCtrl.phone = result.phone;
     signCtrl.favouriteDish = result.favouriteDish;
+    signCtrl.completed = result.completed;
   }
 }
 

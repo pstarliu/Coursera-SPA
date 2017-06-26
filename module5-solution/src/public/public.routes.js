@@ -55,7 +55,7 @@ function routeConfig ($stateProvider) {
           return SignUpService.getPreference();
         }],
         favouriteItem: ['SignUpService', function (SignUpService) {
-          return SignUpService.getFavouriteItem(myInfo.favouriteItem);
+          return SignUpService.getFavouriteItem();
         }]
       }
     });
